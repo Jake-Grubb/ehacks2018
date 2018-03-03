@@ -51,6 +51,7 @@ int main (int argc, char *argv[])
   //Print Device Name
   ioctl (fd, EVIOCGNAME (sizeof (name)), name);
   printf ("Reading From : %s (%s)\n", device, name);
+  printf ("Device successfully connected, awaiting input...\n");
  
   while (1){
       if ((rd = read (fd, ev, size * 64)) < size)
@@ -74,8 +75,20 @@ int main (int argc, char *argv[])
 
 void topButton()
 {
+    int fd;
     //Program the top button here, any code that goes here will be executed upon the use of the iOS button.
-    printf("iOS Button\n");
+    printf("Reversing Rotation...\n");
+    if ((fd = open ("./0.bin", O_RDONLY)) == -1)
+    {
+        remove("./1.bin");
+        FILE* file_ptr = fopen("./0.bin", "w");
+        fclose(file_ptr);
+    } else if ((fd = open ("./1.bin", O_RDONLY)) == -1)
+    {
+        remove("./0.bin");
+        FILE* file_ptr = fopen("./1.bin", "w");
+        fclose(file_ptr);
+    }
 }
 
 void bottomButton()
