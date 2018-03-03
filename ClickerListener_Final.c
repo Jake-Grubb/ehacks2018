@@ -19,7 +19,9 @@
 #include <sys/time.h>
 #include <termios.h>
 #include <signal.h>
- 
+
+void topButton();
+void bottomButton(); 
 void handler (int sig)
 {
   printf ("\n exiting...(%d)\n", sig);
@@ -59,11 +61,9 @@ int main (int argc, char *argv[])
       if (value != ' ' && ev[1].value == 1 && ev[1].type == 1){ // Only read the key press event
        //printf ("Code[%d]\n", (ev[1].code));
        if(ev[1].code == 28){ //Android Button
-           printf("Android Button\n");
            bottomButton();
        }
        if(ev[1].code == 115) { //IOS Button
-            printf("iOS Button\n");
             topButton();
        }
       }
@@ -75,9 +75,11 @@ int main (int argc, char *argv[])
 void topButton()
 {
     //Program the top button here, any code that goes here will be executed upon the use of the iOS button.
+    printf("iOS Button\n");
 }
 
 void bottomButton()
-{
+{    
     //Program the bottom button here, any code that goes here will be executed upon the use of the android button.
+    printf("Android Button\n");
 }
