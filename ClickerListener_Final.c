@@ -2,7 +2,7 @@
  * Submission for: eHacks2018
  * Programmer: Jacob Grubb
  * File: ClickerListener_Final.c
- * Last Changed: 03/03/2018 03:47
+ * Last Changed: 03/04/2018 01:42
 */
 
 #include <stdio.h>
@@ -94,5 +94,5 @@ void topButton()
 void bottomButton()
 {    
     //Program the bottom button here, any code that goes here will be executed upon the use of the android button.
-    printf("Android Button\n");
+    system("aplay quack.wav");
 }
