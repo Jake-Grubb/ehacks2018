@@ -17,10 +17,12 @@ Work was split two-fold, with Dale working on the Raspberry Pi hardware and pyth
 ## Challenges we ran into
 - Difficulty programming the digital encoder
 - We had a challenging time with keyboard interrupts
-
+- Difficulty with communication between scripts.
 
 ## Accomplishments that we're proud of
+-We managed to successfully co-opt a bluetooth signal to our own purposes.
+-We were able to wire our own servos to build a remote controlled rotating platform.
 
 ## What we learned
-
-## What's next for Rotating Duck
+- We learned how to better use servos
+- How to communicate with a raspberry pi using uncommon bluetooth communication devices.
